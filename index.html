@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>United Nations Role-Play | VRChat</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b0c10;
+      color: #ffffff;
+    }
+    header {
+      background: #1f2833;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      color: #66fcf1;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #45a29e;
+    }
+    nav button {
+      background: transparent;
+      border: none;
+      color: white;
+      padding: 15px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    nav button:hover {
+      background: #1f2833;
+    }
+    .content {
+      padding: 20px;
+      display: none;
+    }
+    .content.active {
+      display: block;
+    }
+    a.join-link {
+      color: #66fcf1;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌐 United Nations Role-Play</h1>
+    <p>VRChat Organization</p>
+  </header>
+
+  <nav>
+    <button onclick="showSection('personalList')">Personal List</button>
+    <button onclick="showSection('duties')">Main Duties</button>
+    <button onclick="showSection('announcements')">Announcements</button>
+    <button onclick="showSection('join')">How to Join</button>
+  </nav>
+
+  <section id="personalList" class="content active">
+    <h2>👥 Personal List</h2>
+    <ul>
+      <li>Secretary General: </li>
+      <li>Deputy Secretary General: Echo</li>
+      <li>Military Commander: Valkyrie</li>
+      <li>Diplomatic Envoy: Nova</li>
+      <li>Cyber Defense Lead: Cipher</li>
+    </ul>
+  </section>
+
+  <section id="duties" class="content">
+    <h2>📜 Main Duties</h2>
+    <ul>
+      <li>Promote peace, diplomacy, and structured role-play</li>
+      <li>Coordinate international VR military simulations</li>
+      <li>Maintain order during events and operations</li>
+      <li>Support new users entering the RP ecosystem</li>
+    </ul>
+  </section>
+
+  <section id="announcements" class="content">
+    <h2>📢 Announcements</h2>
+    <p>🕒 Weekly briefing every Friday @ 8PM EST in HQ room</p>
+    <p>📣 Recruitment open for Peacekeepers, join interviews on Discord</p>
+    <p>🚀 UN Training Server v2 launching soon</p>
+  </section>
+
+  <section id="join" class="content">
+    <h2>🔗 How to Join</h2>
+    <p>To become a member, follow the steps below:</p>
+    <ol>
+      <li>Click the link below to visit our VRChat group page</li>
+      <li>Request to join</li>
+      <li>Attend a briefing or introduction session</li>
+    </ol>
+    <p><a href="https://vrchat.com/home/group/your-group-id" target="_blank" class="join-link">👉 Join the United Nations RP Group</a></p>
+  </section>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.content').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
