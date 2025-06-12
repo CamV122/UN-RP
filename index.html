@@ -6,52 +6,97 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background: #0b0c10;
       color: #ffffff;
     }
+
     header {
       background: #1f2833;
-      padding: 20px;
+      padding: 30px 20px;
       text-align: center;
+      animation: fadeIn 2s ease-in-out;
     }
+
+    header img {
+      width: 100px;
+      margin-bottom: 10px;
+      filter: drop-shadow(0 0 8px #66fcf1);
+    }
+
     header h1 {
-      margin: 0;
       color: #66fcf1;
+      font-size: 2em;
+      margin: 10px 0 5px;
     }
+
+    header p {
+      margin: 0;
+      color: #c5c6c7;
+    }
+
     nav {
       display: flex;
       justify-content: center;
       background: #45a29e;
+      flex-wrap: wrap;
     }
+
     nav button {
       background: transparent;
       border: none;
       color: white;
-      padding: 15px 20px;
+      padding: 15px 25px;
       font-size: 16px;
       cursor: pointer;
       transition: background 0.3s;
     }
+
     nav button:hover {
       background: #1f2833;
     }
-    .content {
-      padding: 20px;
+
+    section.content {
       display: none;
+      padding: 20px;
+      animation: fadeIn 0.5s ease-in-out;
     }
-    .content.active {
+
+    section.active {
       display: block;
     }
+
+    h2 {
+      color: #66fcf1;
+    }
+
+    ul, ol {
+      padding-left: 20px;
+    }
+
     a.join-link {
       color: #66fcf1;
+      text-decoration: underline;
       font-weight: bold;
-      text-decoration: none;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @media (max-width: 600px) {
+      nav button {
+        flex: 1 1 100%;
+        padding: 10px;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
+    <img src="2E80A1D3-2A20-49FD-BA6C-D35FDFBDCF83.png" alt="UN Logo">
     <h1>🌐 United Nations Role-Play</h1>
     <p>VRChat Organization</p>
   </header>
@@ -66,8 +111,8 @@
   <section id="personalList" class="content active">
     <h2>👥 Personal List</h2>
     <ul>
-      <li>Secretary General: </li>
-      <li>Deputy Secretary General: Echo</li>
+      <li>Secretary General: Mr. Shadow</li>
+      <li>Deputy Secretary: Echo</li>
       <li>Military Commander: Valkyrie</li>
       <li>Diplomatic Envoy: Nova</li>
       <li>Cyber Defense Lead: Cipher</li>
@@ -99,7 +144,11 @@
       <li>Request to join</li>
       <li>Attend a briefing or introduction session</li>
     </ol>
-    <p><a href="https://vrchat.com/home/group/your-group-id" target="_blank" class="join-link">👉 Join the United Nations RP Group</a></p>
+    <p>
+      <a href="https://vrchat.com/home/group/your-group-id" target="_blank" class="join-link">
+        👉 Join the United Nations RP Group
+      </a>
+    </p>
   </section>
 
   <script>
@@ -108,5 +157,6 @@
       document.getElementById(id).classList.add('active');
     }
   </script>
+
 </body>
 </html>
