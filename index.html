@@ -3,95 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <title>United Nations Role-Play | VRChat</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #0b0c10;
-      color: #ffffff;
-    }
+ <style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(180deg, #0b0c10, #1f2833);
+    color: #ffffff;
+    overflow-y: auto; /* Enables scrolling */
+    animation: bgAnimation 10s infinite alternate ease-in-out;
+  }
 
-    header {
-      background: #1f2833;
-      padding: 30px 20px;
-      text-align: center;
-      animation: fadeIn 2s ease-in-out;
-    }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
 
-    header img {
-      width: 100px;
-      margin-bottom: 10px;
-      filter: drop-shadow(0 0 8px #66fcf1);
-    }
+  nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+  }
 
-    header h1 {
-      color: #66fcf1;
-      font-size: 2em;
-      margin: 10px 0 5px;
-    }
+  nav button {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+  }
 
-    header p {
-      margin: 0;
-      color: #c5c6c7;
-    }
+  nav button:hover {
+    background: #1f2833;
+    color: #66fcf1;
+    transform: scale(1.1);
+    box-shadow: 0 0 12px #66fcf1;
+  }
 
-    nav {
-      display: flex;
-      justify-content: center;
-      background: #45a29e;
-      flex-wrap: wrap;
-    }
+  nav button:active {
+    transform: scale(1.15);
+    box-shadow: 0 0 15px #45a29e;
+  }
 
-    nav button {
-      background: transparent;
-      border: none;
-      color: white;
-      padding: 15px 25px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
+  section.content {
+    opacity: 0;
+    max-height: 0;
+    transition: opacity 0.8s ease-in-out, max-height 0.8s ease-in-out;
+    overflow: hidden;
+  }
 
-    nav button:hover {
-      background: #1f2833;
-    }
+  section.active {
+    opacity: 1;
+    max-height: 1000px; /* Allows expansion */
+    padding: 20px;
+  }
 
-    section.content {
-      display: none;
-      padding: 20px;
-      animation: fadeIn 0.5s ease-in-out;
-    }
+  h2 {
+    color: #66fcf1;
+  }
+</style>
 
-    section.active {
-      display: block;
-    }
+<script>
+  function showSection(id) {
+    document.querySelectorAll('.content').forEach(sec => {
+      sec.classList.remove('active');
+    });
+    document.getElementById(id).classList.add('active');
+  }
+</script>
 
-    h2 {
-      color: #66fcf1;
-    }
-
-    ul, ol {
-      padding-left: 20px;
-    }
-
-    a.join-link {
-      color: #66fcf1;
-      text-decoration: underline;
-      font-weight: bold;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(-10px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    @media (max-width: 600px) {
-      nav button {
-        flex: 1 1 100%;
-        padding: 10px;
-      }
-    }
-  </style>
 </head>
 <body>
 
@@ -102,13 +89,342 @@
   </header>
 
   <nav>
+    <button onclick="showSection('Welcome')">Welcome</button>
+    <button onclick="showSection('Ranks')">Ranks</button>
     <button onclick="showSection('personalList')">Personal List</button>
     <button onclick="showSection('duties')">Main Duties</button>
     <button onclick="showSection('announcements')">Announcements</button>
     <button onclick="showSection('join')">How to Join</button>
   </nav>
 
-  <section id="personalList" class="content active">
+    <section id="Welcome" class="content active">
+    <h2>👥 Personal List</h2>
+    <ul>
+      <li>Secretary General:</li>
+      <li>Deputy Secretary: Echo</li>
+      <li>Military Commander: Valkyrie</li>
+      <li>Diplomatic Envoy: Nova</li>
+      <li>Cyber Defense Lead: Cipher</li>
+    </ul>
+  </section>
+
+      <section id="Ranks" class="content">
+    <h2>👥 Personal List</h2>
+    <ul>
+      <li>Ranks of the Global Occult Coalition</li>
+      <li>—————————————————————-</li>
+      <li>Ranks in the PHYSICS Division mark a person's position in its hierarchical structure. As people gain more responsibility and authority, they earn promotions in rank.</li>
+      <li>The formal rank structure within the Forces is essential for:</li>
+      <li>passing orders in operations</li>
+      <li>ensuring clarity of command</li>
+
+      <li>maintaining order and discipline</li>
+
+      <li>-------------------------</li>
+
+      <li>There are rank Rank above all</li>
+
+      <li>High Command</li>
+
+      <li>@Undersecretariat - Chair-Man</li>
+
+      <li>@Director of the Global Occult Coalition</li>
+
+      <li>@Assistant Director</li>
+
+      <li>———</li>
+
+      <li>GOC Ranks</li>
+
+      <li>Commissioned Officer</li>
+
+      <li>General Officers</li>
+
+      <li>@General (O-10)</li>
+
+      <li>@Lieutenant General (O-9)</li>
+
+      <li>@Major General (O-8)</li>
+
+      <li>@Brigadier General (O-7)</li>
+
+      <li>Field Grade Officers</li>
+
+      <li>@Colonel (O-6)</li>
+
+      <li>@Lieutenant-Colonel (O-5)</li>
+
+      <li>@Major (O-4)</li>
+
+      <li>Company Grade Officers</li>
+
+      <li>@Captain (O-3)</li>
+
+      <li>@First Lieutenant (O-2)</li>
+
+      <li>@Second Lieutenant (O-1)</li>
+
+      <li>Warrant Officers</li>
+
+      <li>@Chief Warrant Officer 5 (W-5)</li>
+
+      <li>@Chief Warrant Officer 4 (W-4)</li>
+
+      <li>@Chief Warrant Officer 3 (W-3)</li>
+
+      <li>@Chief Warrant Officer 2 (W-2)</li>
+
+      <li>@Warrant Officer 1 (W-1)</li>
+
+      <li>Enlisted</li>
+
+      <li>Senior Non-Commissioned Officers (SNCO)</li>
+
+      <li>@Sergeant Major of the GOC (Special)</li>
+
+      <li>@Command Sergeant Major (E-9)</li>
+
+      <li>@Sergeant Major (E-9)</li>
+
+      <li>@First sergeant (E-8)</li>
+
+      <li>Non-Commissioned Officers (NCO)</li>
+
+      <li>@Master Sergeant (E-8)</li>
+
+      <li>@Sergeant First Class (E-7)</li>
+
+      <li>@Staff Sergeant (E-6)</li>
+
+      <li>@Sergeant (E-5)</li>
+
+      <li>@Corporal (E-4)</li>
+
+      <li>Enlisted (E)</li>
+
+      <li>@Specialist (E-4)</li>
+
+      <li>@Lance Corporal (E-3)</li>
+
+      <li>@Private First Class (E-2)</li>
+
+      <li>@Private (E-1)</li>
+
+      <li>—————————————————————-</li>
+
+      <li>Ranks in the PTOLEMY Division mark a person's position in its hierarchical structure...</li>
+
+      <li>The formal rank structure within the Forces is essential for:</li>
+
+      <li>passing orders in operations</li>
+
+      <li>ensuring clarity of command</li>
+
+      <li>maintaining order and discipline</li>
+
+
+      <li>Commissioned Officer (OF)</li>
+
+      <li>General Officers</li>
+
+      <li>Major-General (MGen) [OF-7]</li>
+
+      <li>Brigadier General (BGen) [OF-6]</li>
+
+      
+
+      <li>Senior Officers</li>
+
+      <li>Colonel (Col) [OF-5]</li>
+
+      <li>Lieutenant-Colonel (LCol) [OF-4]</li>
+
+      <li>Major (Maj) [OF-3]</li>
+
+
+
+      <li>Junior Officers</li>
+
+      <li>Captain (Capt) [OF-2]</li>
+
+      <li>Lieutenant (Lt) [OF-1]</li>
+
+      <li>Second Lieutenant (2Lt) [OF-1]</li>
+
+
+      <li>Subordinate Officer</li>
+
+      <li>Officer Cadet (OCdt) [OF-(D)]</li>
+
+
+      <li>Non-Commission Member (NCM)</li>
+
+      <li>Senior Non-Commissioned Officers (SNCO)</li>
+
+      <li>Command Chief Warrant Officer (CCWO) [NCM-9]</li>
+
+      <li>Formation Chief Warrant Officer (FCWO) [NCM-9]</li>
+
+      <li>Regiment Sergeant Major (RSM/CWO) [NCM-9]</li>
+
+      <li>Chief Warrant Officer (CWO) [NCM-9]</li>
+
+      <li>Company Sergeant Major (CSM/MWO) [NCM-8]</li>
+
+      <li>Master Warrant Officer (MWO) [NCM-8]</li>
+
+      <li>Warrant Officer (WO) [NCM-7]</li>
+
+      <li>Sergeant (Sgt) [NCM-6]</li>
+
+
+      <li>Junior Non-Commissioned Members (JNCM)</li>
+
+      <li>Master Corporal (MCpl) [NCM-5]</li>
+
+      <li>Corporal (Cpl) [NCM-4]</li>
+
+      <li>Private (Trained) (Pte (T)) [NCM-3]</li>
+
+      <li>Private (Basic) (Pte (B)) [NCM-2]</li>
+
+      <li>Private (Recruit) (Pte (R)) [NCM-1]</li>
+
+
+      <li>Level of Command</li>
+
+      <li>High-Command</li>
+
+      <li>@Protected Major-C</li>
+
+
+      <li>General Officers</li>
+
+      <li>@Protected C</li>
+
+
+      <li>Colonel</li>
+
+      <li>@Protected Junior-C</li>
+
+
+      <li>Field Grade Officers/Senior Officers</li>
+
+      <li>@Protected B</li>
+
+
+      <li>Junior Officers</li>
+
+      <li>@Protected A</li>
+
+
+      <li>Warrant Officers PHYSICS</li>
+
+      <li>@Protected Major-Sub-C</li>
+
+
+      <li>Senior Non-Commissioned Officers PHYSICS /Chief Warrant Officers</li>
+
+      <li>@Protected Sub-C</li>
+
+
+      <li>Non-Commissioned Officers PHYSICS/Senior Non-Commissioned Officers</li>
+
+      <li>@Protected Sub-B</li>
+
+
+      <li>Enlisted/Junior Non-Commissioned Members</li>
+
+      <li>@Protected Sub-A</li>
+
+      <li>E-9 | PHYSICS | AUDEAMUS — 5/5/2025 12:01 PM</li>
+
+
+      <li>—————————————————————-</li>
+
+      <li>Ranks in the PSYCHE Division mark a person's position in its hierarchical structure.</li>
+
+      <li>The formal rank structure within the Forces is essential for:</li>
+
+      <li>passing orders in operations</li>
+
+      <li>ensuring clarity of command</li>
+
+      <li>maintaining order and discipline</li>
+
+
+      <li>PSYCHE Director</li>
+
+      <li>@General Director ~ O-11</li>
+
+      <li>@Deputy Director ~ O-10</li>
+
+      <li>@Director of PSYCHE Division ~ O-9</li>
+
+      <li>@Minister of PSYCHE Division ~ O-8</li>
+
+      <li>@Assistant Director of PSYCHE Division ~ O-7</li>
+
+
+      <li>Council</li>
+
+      <li>@Seat of Diplomacy ~ O-6</li>
+
+      <li>@Directorial Council ~ O-5</li>
+
+
+      <li>Managers</li>
+
+      <li>@Branch Manager ~ O-4</li>
+
+      <li>@Assistant Manager ~ O-3</li>
+
+
+      <li>Relations Officers</li>
+
+      <li>@Diplomatic Relations Advisor ~ O-2</li>
+
+      <li>@Diplomatic Relations Officer ~ O-1</li>
+
+
+      <li>PSYCHE Supervisor</li>
+
+f      <li>@Head Supervisor ~ E-9</li>
+
+      <li>@Supervisor ~ E-9</li>
+
+
+      <li>Administrative Office</li>
+
+      <li>@Secretariat ~ E-8</li>
+
+
+      <li>Ambassador</li>
+
+      <li>@Senior Ambassador ~ E-7</li>
+
+      <li>@Ambassador ~ E-6</li>
+
+      <li>@Junior Ambassador ~ E-5</li>
+
+
+      <li>PSYCHE Agent</li>
+
+      <li>@Attache ~ E-4</li>
+
+      <li>@Envoy ~ E-3</li>
+
+      <li>@Diplomatic Agent ~ E-2</li>
+
+      <li>@Intern ~ E-1</li>
+
+
+
+    </ul>
+
+  </section>
+
+  <section id="personalList" class="content">
     <h2>👥 Personal List</h2>
     <ul>
       <li>Secretary General: Mr. Shadow</li>
@@ -122,10 +438,7 @@
   <section id="duties" class="content">
     <h2>📜 Main Duties</h2>
     <ul>
-      <li>Promote peace, diplomacy, and structured role-play</li>
-      <li>Coordinate international VR military simulations</li>
-      <li>Maintain order during events and operations</li>
-      <li>Support new users entering the RP ecosystem</li>
+      <li>To keep the peace and maintain friendly relations between occult organizations, protect humanity against all threats paranormal, parascientific, and paratemporal, and take any actions required to ensure the survival of the human race.</li>
     </ul>
   </section>
 
