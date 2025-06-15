@@ -1,86 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" type="image/png" href="un-logo.png">
   <meta charset="UTF-8">
   <title>United Nations Role-Play | VRChat</title>
- <style>
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(180deg, #0b0c10, #1f2833);
-    color: #ffffff;
-    overflow-y: auto; /* Enables scrolling */
-    animation: bgAnimation 10s infinite alternate ease-in-out;
-  }
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #1f2833; /* Solid background */
+      color: #ffffff;
+      overflow-y: auto; /* Enables scrolling */
+    }
 
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-  }
+    header {
+      background: #0b0c10;
+      padding: 30px 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-  nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 10px;
-  }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #4578a2;
+      padding: 10px;
+      position: sticky;
+      top: 80px;
+      z-index: 1000;
+    }
 
-  nav button {
-    background: transparent;
-    border: none;
-    color: white;
-    padding: 15px 25px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    border-radius: 5px;
-  }
+    nav button {
+      background: transparent;
+      border: none;
+      color: white;
+      padding: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+      border-radius: 5px;
+    }
 
-  nav button:hover {
-    background: #1f2833;
-    color: #66fcf1;
-    transform: scale(1.1);
-    box-shadow: 0 0 12px #66fcf1;
-  }
+    nav button:hover {
+      background: #7066fc;
+      color: #1f2833;
+    }
 
-  nav button:active {
-    transform: scale(1.15);
-    box-shadow: 0 0 15px #45a29e;
-  }
-
-  section.content {
-    opacity: 0;
-    max-height: 0;
-    transition: opacity 0.8s ease-in-out, max-height 0.8s ease-in-out;
-    overflow: hidden;
-  }
-
-  section.active {
-    opacity: 1;
-    max-height: 1000px; /* Allows expansion */
-    padding: 20px;
-  }
-
-  h2 {
-    color: #66fcf1;
-  }
-</style>
-
-<script>
-  function showSection(id) {
-    document.querySelectorAll('.content').forEach(sec => {
-      sec.classList.remove('active');
-    });
-    document.getElementById(id).classList.add('active');
-  }
-</script>
-
+    section {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+  </style>
 </head>
 <body>
+
 
   <header>
     <img src="un-logo.png" alt="UN Logo">
@@ -97,19 +72,23 @@
     <button onclick="showSection('join')">How to Join</button>
   </nav>
 
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.content').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+
     <section id="Welcome" class="content active">
-    <h2>👥 Personal List</h2>
+    <h2>👥 Welcome</h2>
     <ul>
-      <li>Secretary General:</li>
-      <li>Deputy Secretary: Echo</li>
-      <li>Military Commander: Valkyrie</li>
-      <li>Diplomatic Envoy: Nova</li>
-      <li>Cyber Defense Lead: Cipher</li>
+      <p>Welcome to the United Nations Role-Play in VRChat, an immersive community dedicated to diplomacy, global security, and strategic operations. Whether you're negotiating peace, leading military efforts, or managing cyber defense, you'll play a crucial role in shaping the future. Our organization fosters collaboration between members, ensuring a dynamic and engaging experience for all participants. Join us in discussions, operations, and training sessions as we uphold order and cooperation in a virtual global setting. Step into a world where your decisions matter—become part of the movement today!</p>
     </ul>
   </section>
 
       <section id="Ranks" class="content">
-    <h2>👥 Personal List</h2>
+    <h2>👥 Ranks</h2>
     <ul>
       <li>Ranks of the Global Occult Coalition</li>
       <li>—————————————————————-</li>
@@ -389,7 +368,7 @@
 
       <li>PSYCHE Supervisor</li>
 
-f      <li>@Head Supervisor ~ E-9</li>
+      <li>@Head Supervisor ~ E-9</li>
 
       <li>@Supervisor ~ E-9</li>
 
@@ -421,7 +400,7 @@ f      <li>@Head Supervisor ~ E-9</li>
 
 
     </ul>
-
+    
   </section>
 
   <section id="personalList" class="content">
@@ -466,8 +445,8 @@ f      <li>@Head Supervisor ~ E-9</li>
 
   <script>
     function showSection(id) {
-      document.querySelectorAll('.content').forEach(sec => sec.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
+      document.querySelectorAll('section').forEach(sec => sec.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
     }
   </script>
 
